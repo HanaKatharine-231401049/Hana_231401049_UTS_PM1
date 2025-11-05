@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/quiz_model.dart';
 import '../widgets/option_button.dart';
 import '../widgets/progress_indicator.dart';
+import 'result_page.dart';
 
 class QuizPage extends StatefulWidget {
   final List<QuizQuestion> questions;
@@ -196,7 +197,7 @@ class _QuizPageState extends State<QuizPage> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 14,
-                          color: Colors.green,
+                          color: Color(0xFF0D47A1),
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w500,
                         ),
@@ -217,7 +218,7 @@ class _QuizPageState extends State<QuizPage> {
                     'Previous',
                     style: TextStyle(
                       fontFamily: 'Poppins',
-                      color: _quizState.currentQuestionIndex > 0 ? Color(0xFF4A6FFF) : Colors.grey,
+                      color: _quizState.currentQuestionIndex > 0 ? Color(0xFF0D47A1) : Colors.grey,
                     ),
                   ),
                 ),
@@ -225,7 +226,7 @@ class _QuizPageState extends State<QuizPage> {
                 ElevatedButton(
                   onPressed: isAnswered ? _goToNextQuestion : null,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF4A6FFF),
+                    backgroundColor: Color(0xFF0D47A1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
