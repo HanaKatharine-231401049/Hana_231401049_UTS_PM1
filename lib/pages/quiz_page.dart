@@ -85,7 +85,6 @@ class _QuizPageState extends State<QuizPage> {
             Text(
               'IZZLY',
               style: TextStyle(
-                fontFamily: 'Poppins',
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
                 color: textColor,
@@ -94,7 +93,6 @@ class _QuizPageState extends State<QuizPage> {
             Text(
               'Player: ${widget.userName}',
               style: TextStyle(
-                fontFamily: 'Poppins',
                 fontSize: 12,
                 color: isDarkMode ? Colors.grey[400] : Colors.grey[600],
               ),
@@ -145,7 +143,6 @@ class _QuizPageState extends State<QuizPage> {
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: textColor,
-                        fontFamily: 'Poppins',
                         height: 1.4,
                       ),
                       textAlign: TextAlign.center,
@@ -217,7 +214,6 @@ class _QuizPageState extends State<QuizPage> {
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
                 color: Colors.white,
-                fontFamily: 'Poppins',
               ),
             ),
           ),

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class AppConstants {
   static const String appName = 'IZZLY';
-  static const String customFont = 'Poppins';
   
   static final List<QuizQuestion> quizQuestions = [
     QuizQuestion(
@@ -52,7 +51,6 @@ class AppColors {
 
 class AppThemes {
   static final ThemeData lightTheme = ThemeData(
-    fontFamily: 'Poppins',
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.lightBackground,
     appBarTheme: const AppBarTheme(
@@ -63,7 +61,6 @@ class AppThemes {
   );
 
   static final ThemeData darkTheme = ThemeData(
-    fontFamily: 'Poppins',
     primaryColor: AppColors.darkPrimary,
     scaffoldBackgroundColor: AppColors.darkBackground,
     appBarTheme: const AppBarTheme(

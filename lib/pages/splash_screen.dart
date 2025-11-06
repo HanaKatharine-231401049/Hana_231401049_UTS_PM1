@@ -48,7 +48,6 @@ class SplashScreen extends StatelessWidget {
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
-                fontFamily: 'Poppins',
               ),
             ),
             
@@ -59,7 +58,6 @@ class SplashScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.white,
-                fontFamily: 'Poppins',
               ),
             ),
             

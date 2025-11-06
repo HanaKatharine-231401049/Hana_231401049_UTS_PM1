@@ -19,8 +19,16 @@ class MyApp extends StatelessWidget {
         builder: (context, themeProvider, child) {
           return MaterialApp(
             title: 'IZZLY',
-            theme: AppThemes.lightTheme,
-            darkTheme: AppThemes.darkTheme,
+            theme: AppThemes.lightTheme.copyWith(
+            textTheme: AppThemes.lightTheme.textTheme.apply(
+              fontFamily: 'Poppins',
+            ),
+          ),
+            darkTheme: AppThemes.darkTheme.copyWith(
+              textTheme: AppThemes.darkTheme.textTheme.apply(
+                fontFamily: 'Poppins',
+              ),
+            ),
             themeMode: themeProvider.themeMode,
             home: const SplashScreen(),
             debugShowCheckedModeBanner: false,
