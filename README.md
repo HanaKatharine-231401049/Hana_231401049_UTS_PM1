@@ -5,26 +5,26 @@
 - Lab : 1
 
 # 🧠 Nama Aplikasi
-IZZLY
+**IZZLY**
 
 # 🎯 Tentang Aplikasi
 
-IZZLY adalah aplikasi kuis mobile yang dirancang untuk memberikan pengalaman belajar yang menyenangkan. Dengan antarmuka yang modern dan fitur yang lengkap, aplikasi ini cocok untuk berbagai kebutuhan edukasi dan hiburan. Do your quizzes easily with IZZLY! ✨❣️
+**IZZLY** adalah aplikasi kuis mobile yang dirancang untuk memberikan pengalaman belajar yang menyenangkan. Dengan antarmuka yang modern dan fitur yang lengkap, aplikasi ini cocok untuk berbagai kebutuhan edukasi dan hiburan. Do your quizzes easily with IZZLY! ✨❣️
 
 # ✨ Fitur Utama
 
 1. 👤 **Input Nama Pengguna**
-Sebelum memulai kuis, pengguna diminta memasukkan nama untuk personalisasi pengalaman.
+ : Sebelum memulai kuis, pengguna diminta memasukkan nama untuk personalisasi pengalaman.
 2. 🎯 **Kuis Interaktif**
-Pertanyaan dengan multiple choice, dilengkapi progress indicator dan feedback langsung.
+ : Pertanyaan dengan multiple choice, dilengkapi progress indicator dan feedback langsung.
 3. 📊 **Tampilan Hasil Detail**
-Menampilkan skor, persentase, dan pesan motivasi terhadap performa pengguna.
+ : Menampilkan skor, persentase, dan pesan motivasi terhadap performa pengguna.
 4. 🔄 **Ulangi Kuis**
-Fitur try again untuk mengulangi kuis dengan pertanyaan yang sama tanpa harus ke halaman awal.
+ : Fitur try again untuk mengulangi kuis dengan pertanyaan yang sama tanpa harus ke halaman awal.
 5. 🎨 **Dark/Light Mode**
-Dukungan tema gelap dan terang yang dapat disesuaikan melalui toggle.
+ : Dukungan tema gelap dan terang yang dapat disesuaikan melalui toggle.
 6. 📱 **UI Responsif**
-Desain yang optimal di berbagai ukuran layar dengan navigasi yang smooth.
+ : Desain yang optimal di berbagai ukuran layar dengan navigasi yang smooth.
 
 # 🎨 Kredit Aset
 1. font : Poppins (https://fonts.google.com/specimen/Poppins)
