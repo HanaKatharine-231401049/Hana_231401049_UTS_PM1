@@ -15,6 +15,8 @@ class SplashScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
+              width: 150,
+              height: 150,
               padding: const EdgeInsets.all(12), 
               decoration: BoxDecoration(
                 color: Colors.white, 
@@ -32,8 +34,6 @@ class SplashScreen extends StatelessWidget {
                   scale: 2,
                   child: Image.asset(
                     'assets/images/IZZLY_logo.png',
-                    width: 150,
-                    height: 150,
                     fit: BoxFit.contain,
                   ),
                 ),
