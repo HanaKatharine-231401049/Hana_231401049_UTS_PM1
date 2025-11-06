@@ -1,4 +1,5 @@
 import '../models/quiz_model.dart';
+import 'package:flutter/material.dart';
 
 class AppConstants {
   static const String appName = 'Math Quiz';
@@ -6,8 +7,8 @@ class AppConstants {
   
   static final List<QuizQuestion> quizQuestions = [
     QuizQuestion(
-      question: "Which 3 numbers have the same answer whether they're added or multiplied together?",
-      options: ["a  6,3 and 4", "b  1,2 and 3", "c  2,4 and 6", "d  1,2 and 4"],
+      question: "what is 2 x 2?",
+      options: ["a  4", "b  3", "c 6", "d  1"],
       correctAnswerIndex: 1,
     ),
     QuizQuestion(
@@ -31,4 +32,44 @@ class AppConstants {
       correctAnswerIndex: 0,
     ),
   ];
+}
+
+class AppColors {
+  // Light Mode Colors
+  static const Color primaryColor = Color(0xFF0D47A1); // Biru untuk light mode
+  static const Color lightBackground = Color(0xFFFFFFFF);
+  static const Color lightSurface = Color(0xFFF8F9FA);
+  static const Color lightText = Color(0xFF0D47A1);
+  static const Color lightTextSecondary = Color(0xFF6B7280);
+  
+  // Dark Mode Colors
+  static const Color darkPrimary = Color(0xFF4A6FFF); // Biru muda untuk dark mode
+  static const Color darkBackground = Color(0xFF121212);
+  static const Color darkSurface = Color(0xFF1E1E1E);
+  static const Color darkText = Color(0xFFFFFFFF);
+  static const Color darkTextSecondary = Color(0xFFA0A0A0);
+}
+
+class AppThemes {
+  static final ThemeData lightTheme = ThemeData(
+    fontFamily: 'Poppins',
+    primaryColor: AppColors.primaryColor,
+    scaffoldBackgroundColor: AppColors.lightBackground,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.lightBackground,
+      foregroundColor: AppColors.lightText,
+      elevation: 0,
+    ),
+  );
+
+  static final ThemeData darkTheme = ThemeData(
+    fontFamily: 'Poppins',
+    primaryColor: AppColors.darkPrimary,
+    scaffoldBackgroundColor: AppColors.darkBackground,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.darkBackground,
+      foregroundColor: AppColors.darkText,
+      elevation: 0,
+    ),
+  );
 }
