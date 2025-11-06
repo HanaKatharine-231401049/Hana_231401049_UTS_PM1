@@ -1,16 +1,38 @@
-# quiz_app_uts
+# 👤 Identitas
 
-A new Flutter project.
+Nama : Hana Katharine Putri Pratama Sunmacher
+NIM : 231401049 
+Lab : 1
 
-## Getting Started
+# 🧠 Nama Aplikasi
+IZZLY
 
-This project is a starting point for a Flutter application.
+# 🎯 Tentang Aplikasi
 
-A few resources to get you started if this is your first Flutter project:
+IZZLY adalah aplikasi kuis mobile yang dirancang untuk memberikan pengalaman belajar yang menyenangkan. Dengan antarmuka yang modern dan fitur yang lengkap, aplikasi ini cocok untuk berbagai kebutuhan edukasi dan hiburan. Do your quizzes easily with IZZLY! ✨❣️
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# ✨ Fitur Utama
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 👤 Input Nama Pengguna
+Sebelum memulai kuis, pengguna diminta memasukkan nama untuk personalisasi pengalaman.
+## 🎯 Kuis Interaktif
+Pertanyaan dengan multiple choice, dilengkapi progress indicator dan feedback langsung.
+## 📊 Tampilan Hasil Detail
+Menampilkan skor, persentase, dan pesan motivasi terhadap performa pengguna.
+## 🔄 Ulangi Kuis
+Fitur try again untuk mengulangi kuis dengan pertanyaan yang sama tanpa harus ke halaman awal.
+## 🎨 Dark/Light Mode
+Dukungan tema gelap dan terang yang dapat disesuaikan melalui toggle.
+## 📱 UI Responsif
+Desain yang optimal di berbagai ukuran layar dengan navigasi yang smooth.
+
+# 🎨 Kredit Aset
+1. font : Poppins (https://fonts.google.com/specimen/Poppins)
+3. Icon : bawaan flutter
+
+# 🖼️ Screenshot dan Video Aplikasi
+1. video : https://drive.google.com/drive/folders/135VeLpZz9_fpbkS3nYh1Qik0Lzxkt5W9
+2. screenshot : https://drive.google.com/drive/folders/1m82rgGk5_wWC4tOulX9AHOeukxsrwzKg
+
+# 👾 Mockup / Prototype Aplikasi
+https://www.figma.com/design/vxyw3ctkVPwTrcQIPN9uxv/Quiz---Hana?node-id=0-1&t=YMWIllXv0Zf1zQdi-1
