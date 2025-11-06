@@ -2,48 +2,48 @@ import '../models/quiz_model.dart';
 import 'package:flutter/material.dart';
 
 class AppConstants {
-  static const String appName = 'Math Quiz';
+  static const String appName = 'IZZLY';
   static const String customFont = 'Poppins';
   
   static final List<QuizQuestion> quizQuestions = [
     QuizQuestion(
-      question: "what is 2 x 2?",
-      options: ["a  4", "b  3", "c 6", "d  1"],
-      correctAnswerIndex: 1,
-    ),
-    QuizQuestion(
-      question: "What is 8 × 7?",
-      options: ["a  48", "b  56", "c  64", "d  72"],
-      correctAnswerIndex: 1,
-    ),
-    QuizQuestion(
-      question: "Solve: 12 + 5 × 3",
-      options: ["a  21", "b  27", "c  51", "d  36"],
-      correctAnswerIndex: 1,
-    ),
-    QuizQuestion(
-      question: "What is 25% of 200?",
-      options: ["a  25", "b  50", "c  75", "d  100"],
-      correctAnswerIndex: 1,
-    ),
-    QuizQuestion(
-      question: "Simplify: 18 ÷ 3 + 2 × 4",
-      options: ["a  14", "b  16", "c  18", "d  20"],
+      question: "Ibu kota Indonesia adalah?",
+      options: ["a  Jakarta", "b  Bandung", "c  Surabaya", "d  Medan"],
       correctAnswerIndex: 0,
+    ),
+    QuizQuestion(
+      question: "Planet terdekat dengan Matahari adalah?",
+      options: ["a  Venus", "b  Bumi", "c  Mars", "d  Merkurius"],
+      correctAnswerIndex: 3,
+    ),
+    QuizQuestion(
+      question: "Berapa banyak benua di dunia?",
+      options: ["a  5", "b  6", "c  7", "d  8"],
+      correctAnswerIndex: 2,
+    ),
+    QuizQuestion(
+      question: "Hewan yang dikenal sebagai 'Raja Hutan' adalah?",
+      options: ["a  Harimau", "b  Singa", "c  Gajah", "d  Serigala"],
+      correctAnswerIndex: 1,
+    ),
+    QuizQuestion(
+      question: "Benda cair yang diperlukan manusia untuk hidup adalah?",
+      options: ["a  Susu", "b  Matcha", "c  Air", "d  Kopi"],
+      correctAnswerIndex: 2,
     ),
   ];
 }
 
 class AppColors {
   // Light Mode Colors
-  static const Color primaryColor = Color(0xFF0D47A1); // Biru untuk light mode
+  static const Color primaryColor = Color(0xFF0D47A1);
   static const Color lightBackground = Color(0xFFFFFFFF);
   static const Color lightSurface = Color(0xFFF8F9FA);
   static const Color lightText = Color(0xFF0D47A1);
   static const Color lightTextSecondary = Color(0xFF6B7280);
   
   // Dark Mode Colors
-  static const Color darkPrimary = Color(0xFF4A6FFF); // Biru muda untuk dark mode
+  static const Color darkPrimary = Color(0xFF4A6FFF);
   static const Color darkBackground = Color(0xFF121212);
   static const Color darkSurface = Color(0xFF1E1E1E);
   static const Color darkText = Color(0xFFFFFFFF);
