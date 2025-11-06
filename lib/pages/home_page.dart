@@ -85,7 +85,6 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
                     color: textColor,
-                    fontFamily: 'Poppins',
                   ),
                 ),
                 
@@ -96,7 +95,6 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(
                     fontSize: 16,
                     color: isDarkMode ? Colors.grey[400] : Colors.grey[600],
-                    fontFamily: 'Poppins',
                   ),
                 ),
                 
@@ -113,7 +111,6 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
                           color: textColor,
-                          fontFamily: 'Poppins',
                         ),
                       ),
                       
@@ -126,7 +123,6 @@ class _HomePageState extends State<HomePage> {
                           hintText: 'Type your name here...',
                           hintStyle: TextStyle(
                             color: isDarkMode ? Colors.grey[400] : Colors.grey[500],
-                            fontFamily: 'Poppins',
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8),
@@ -147,7 +143,6 @@ class _HomePageState extends State<HomePage> {
                         ),
                         style: TextStyle(
                           fontSize: 16,
-                          fontFamily: 'Poppins',
                           color: textColor,
                         ),
                         validator: (value) {
@@ -187,7 +182,6 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
                               color: Colors.white,
-                              fontFamily: 'Poppins',
                             ),
                           ),
                         ),

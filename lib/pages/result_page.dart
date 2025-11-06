@@ -57,7 +57,6 @@ class ResultPage extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
-                    fontFamily: 'Poppins',
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -85,7 +84,6 @@ class ResultPage extends StatelessWidget {
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           color: primaryColor, 
-                          fontFamily: 'Poppins',
                         ),
                       ),
                       Text(
@@ -93,7 +91,6 @@ class ResultPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 14,
                           color: isDarkMode ? Colors.grey[400] : Colors.grey[600],
-                          fontFamily: 'Poppins',
                         ),
                       ),
                     ],
@@ -109,7 +106,6 @@ class ResultPage extends StatelessWidget {
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                     color: textColor,
-                    fontFamily: 'Poppins',
                   ),
                 ),
                 
@@ -121,7 +117,6 @@ class ResultPage extends StatelessWidget {
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
                     color: primaryColor, 
-                    fontFamily: 'Poppins',
                   ),
                 ),
                 
@@ -133,7 +128,6 @@ class ResultPage extends StatelessWidget {
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                     color: Colors.green,
-                    fontFamily: 'Poppins',
                   ),
                 ),
                 
@@ -144,7 +138,6 @@ class ResultPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     color: isDarkMode ? Colors.grey[400] : Colors.grey[600],
-                    fontFamily: 'Poppins',
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -165,7 +158,6 @@ class ResultPage extends StatelessWidget {
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFFD4AF37),
-                      fontFamily: 'Poppins',
                     ),
                   ),
                 ),
@@ -202,7 +194,6 @@ class ResultPage extends StatelessWidget {
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                             color: Colors.white,
-                            fontFamily: 'Poppins',
                           ),
                         ),
                       ),
@@ -225,7 +216,6 @@ class ResultPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 16,
                             color: primaryColor, 
-                            fontFamily: 'Poppins',
                           ),
                         ),
                       ),

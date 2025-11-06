@@ -84,7 +84,6 @@ class OptionButton extends StatelessWidget {
               fontSize: 16,
               color: getTextColor(),
               fontWeight: FontWeight.w500,
-              fontFamily: 'Poppins',
             ),
           ),
         ),
