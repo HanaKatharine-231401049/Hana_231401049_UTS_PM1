@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                       
                       TextFormField(
                         controller: _nameController,
-                        cursorColor: isDarkMode ? const Color(0xFF4A6FFF) : const Color(0xFF0D47A1), // HANYA INI YANG DITAMBAH
+                        cursorColor: isDarkMode ? const Color(0xFF4A6FFF) : const Color(0xFF0D47A1), 
                         decoration: InputDecoration(
                           hintText: 'Type your name here...',
                           hintStyle: TextStyle(
