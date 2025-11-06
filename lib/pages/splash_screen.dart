@@ -1,62 +1,48 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    _navigateToHome();
-  }
-
-  _navigateToHome() async {
-    await Future.delayed(const Duration(milliseconds: 6000), () {});
-    if (mounted) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const HomePage()),
-      );
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
+    _navigateToHome(context);
+    
     return Scaffold(
-      backgroundColor: Color(0xFF0D47A1),
+      backgroundColor: const Color(0xFF0D47A1),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // App Icon
             Container(
-              width: 100,
-              height: 100,
+              padding: const EdgeInsets.all(12), 
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                color: Colors.white, 
+                borderRadius: BorderRadius.circular(16), 
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 10,
-                    offset: const Offset(0, 5),
+                    color: Colors.black.withOpacity(0.3),
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
                   ),
                 ],
               ),
-                child: const Icon(
-                  IconData(0xe0bf, fontFamily: 'MaterialIcons'),
-                  size: 60,
-                  color: Color(0xFF0D47A1),
+              child: Center(
+                child: Transform.scale(
+                  scale: 2,
+                  child: Image.asset(
+                    'assets/images/IZZLY_logo.png',
+                    width: 150,
+                    height: 150,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
-            SizedBox(height: 20),
-            // App Title
-            Text(
+            ),
+            
+            const SizedBox(height: 40), 
+            
+            const Text(
               'IZZLY',
               style: TextStyle(
                 fontSize: 32,
@@ -65,8 +51,10 @@ class _SplashScreenState extends State<SplashScreen> {
                 fontFamily: 'Poppins',
               ),
             ),
-            SizedBox(height: 10),
-            Text(
+            
+            const SizedBox(height: 8),
+            
+            const Text(
               'Do Your Quizzes Easily',
               style: TextStyle(
                 fontSize: 16,
@@ -74,14 +62,24 @@ class _SplashScreenState extends State<SplashScreen> {
                 fontFamily: 'Poppins',
               ),
             ),
-            SizedBox(height: 40),
-            // Loading Indicator
-            CircularProgressIndicator(
+            
+            const SizedBox(height: 40),
+            
+            const CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
             ),
           ],
         ),
       ),
     );
+  }
+
+  void _navigateToHome(BuildContext context) {
+    Future.delayed(const Duration(milliseconds: 6000), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const HomePage()),
+      );
+    });
   }
 }

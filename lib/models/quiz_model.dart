@@ -20,10 +20,10 @@ class QuizState {
   QuizState({
     required this.questions,
     required this.userName,
-    List<int?>? userAnswers,
+    required this.userAnswers,
     this.currentQuestionIndex = 0,
     this.isCompleted = false,
-  }) : userAnswers = userAnswers ?? List.filled(questions.length, null);
+  });
 
   QuizState copyWith({
     List<QuizQuestion>? questions,

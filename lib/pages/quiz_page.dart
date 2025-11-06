@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import '../models/quiz_model.dart';
+import 'package:provider/provider.dart';
+import '../models/quiz_model.dart'; 
 import '../widgets/option_button.dart';
 import '../widgets/progress_indicator.dart';
+import '../providers/theme_provider.dart';
 import 'result_page.dart';
 
 class QuizPage extends StatefulWidget {
@@ -15,153 +17,148 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  late QuizState _quizState;
+  late List<int?> _userAnswers;
+  int _currentQuestionIndex = 0;
   bool _showAnswer = false;
 
   @override
   void initState() {
     super.initState();
-    _quizState = QuizState(questions: widget.questions, userName: widget.userName);
+    _userAnswers = List.filled(widget.questions.length, null);
+  }
+
+  bool get _isLastQuestion {
+    return _currentQuestionIndex == widget.questions.length - 1;
   }
 
   void _selectAnswer(int answerIndex) {
     if (_showAnswer) return;
 
     setState(() {
-      List<int?> updatedAnswers = List.from(_quizState.userAnswers);
-      updatedAnswers[_quizState.currentQuestionIndex] = answerIndex;
-      _quizState = _quizState.copyWith(userAnswers: updatedAnswers);
+      _userAnswers[_currentQuestionIndex] = answerIndex;
       _showAnswer = true;
     });
-
-    // Hanya auto-next jika belum sampai di soal terakhir
-    if (_quizState.currentQuestionIndex < widget.questions.length - 1) {
-      Future.delayed(const Duration(seconds: 1), () {
-        if (mounted) {
-          setState(() {
-            _quizState = _quizState.copyWith(
-              currentQuestionIndex: _quizState.currentQuestionIndex + 1,
-            );
-            _showAnswer = false;
-          });
-        }
-      });
-    }
   }
 
   void _goToNextQuestion() {
-    if (_quizState.currentQuestionIndex < widget.questions.length - 1) {
+    if (_currentQuestionIndex < widget.questions.length - 1) {
       setState(() {
-        _quizState = _quizState.copyWith(
-          currentQuestionIndex: _quizState.currentQuestionIndex + 1,
-        );
-        _showAnswer = _quizState.userAnswers[_quizState.currentQuestionIndex] != null;
+        _currentQuestionIndex++;
+        _showAnswer = false;
       });
     } else {
-     
+      final quizState = QuizState(
+        questions: widget.questions,
+        userName: widget.userName,
+        userAnswers: _userAnswers,
+        currentQuestionIndex: _currentQuestionIndex,
+        isCompleted: true,
+      );
+      
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => ResultPage(quizState: _quizState),
+          builder: (context) => ResultPage(quizState: quizState),
         ),
       );
     }
   }
 
-  void _goToPreviousQuestion() {
-    if (_quizState.currentQuestionIndex > 0) {
-      setState(() {
-        _quizState = _quizState.copyWith(
-          currentQuestionIndex: _quizState.currentQuestionIndex - 1,
-        );
-        _showAnswer = _quizState.userAnswers[_quizState.currentQuestionIndex] != null;
-      });
-    }
-  }
-
-  bool get _isLastQuestion {
-    return _quizState.currentQuestionIndex == widget.questions.length - 1;
-  }
-
-  bool get _hasAnswerForCurrentQuestion {
-    return _quizState.userAnswers[_quizState.currentQuestionIndex] != null;
-  }
-
   @override
   Widget build(BuildContext context) {
-    final currentQuestion = widget.questions[_quizState.currentQuestionIndex];
-    final currentAnswerIndex = _quizState.userAnswers[_quizState.currentQuestionIndex];
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final isDarkMode = themeProvider.isDarkMode;
+    
+    final Color backgroundColor = isDarkMode ? const Color(0xFF121212) : Colors.white;
+    final Color textColor = isDarkMode ? Colors.white : const Color(0xFF0D47A1);
+    final Color surfaceColor = isDarkMode ? const Color(0xFF1E1E1E) : const Color(0xFFF8F9FA);
+
+    final currentQuestion = widget.questions[_currentQuestionIndex];
+    final currentAnswerIndex = _userAnswers[_currentQuestionIndex];
     final isAnswered = currentAnswerIndex != null;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         title: Column(
           children: [
             Text(
-              'Math',
+              'IZZLY',
               style: TextStyle(
                 fontFamily: 'Poppins',
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
-                color: Colors.black,
+                color: textColor,
               ),
             ),
             Text(
-              'Player: ${_quizState.userName}',
+              'Player: ${widget.userName}',
               style: TextStyle(
                 fontFamily: 'Poppins',
                 fontSize: 12,
-                color: Colors.grey[600],
+                color: isDarkMode ? Colors.grey[400] : Colors.grey[600],
               ),
             ),
           ],
         ),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+        backgroundColor: backgroundColor,
+        foregroundColor: textColor,
         elevation: 0,
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(
+              isDarkMode ? Icons.light_mode : Icons.dark_mode,
+              color: textColor,
+            ),
+            onPressed: () {
+              themeProvider.toggleTheme(!isDarkMode);
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [
           QuizProgressIndicator(
-            currentQuestion: _quizState.currentQuestionIndex + 1,
+            currentQuestion: _currentQuestionIndex + 1,
             totalQuestions: widget.questions.length,
           ),
           Expanded(
             child: SingleChildScrollView(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: Color(0xFFF8F9FA),
+                      color: surfaceColor,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Color(0xFFE0E0E0)),
+                      border: Border.all(
+                        color: isDarkMode ? Colors.grey[700]! : const Color(0xFFE0E0E0),
+                      ),
                     ),
                     child: Text(
                       currentQuestion.question,
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.black87,
+                        color: textColor,
                         fontFamily: 'Poppins',
                         height: 1.4,
                       ),
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
+                  
+                  // Opsi Jawaban
                   ...currentQuestion.options.asMap().entries.map((entry) {
                     final index = entry.key;
                     final option = entry.value;
                     final isSelected = currentAnswerIndex == index;
                     final isCorrect = index == currentQuestion.correctAnswerIndex;
-                    final showCorrectAnswer = _showAnswer && isCorrect;
-                    final showWrongAnswer = _showAnswer && isSelected && !isCorrect;
 
                     return OptionButton(
                       text: option,
@@ -171,80 +168,60 @@ class _QuizPageState extends State<QuizPage> {
                       onTap: isAnswered && _showAnswer ? null : () => _selectAnswer(index),
                     );
                   }).toList(),
-                  SizedBox(height: 20),
-                  if (!isAnswered && !_showAnswer)
-                    Container(
-                      width: double.infinity,
-                      margin: EdgeInsets.only(top: 20),
-                      child: Text(
-                        'Select an answer to continue',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey[600],
-                          fontFamily: 'Poppins',
-                        ),
-                      ),
-                    ),
-                  if (isAnswered && _showAnswer)
-                    Container(
-                      width: double.infinity,
-                      margin: EdgeInsets.only(top: 20),
-                      child: Text(
-                        _isLastQuestion 
-                            ? 'This is the last question. Press Finish to see your results.'
-                            : 'Press Next to continue',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Color(0xFF0D47A1),
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
+                  
+                  const SizedBox(height: 24),
+                  
+                  // Tombol Next
+                  if (isAnswered) _buildNextButton(isDarkMode),
+                  
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.all(20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: _quizState.currentQuestionIndex > 0 ? _goToPreviousQuestion : null,
-                  child: Text(
-                    'Previous',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      color: _quizState.currentQuestionIndex > 0 ? Color(0xFF0D47A1) : Colors.grey,
-                    ),
-                  ),
-                ),
-                
-                ElevatedButton(
-                  onPressed: isAnswered ? _goToNextQuestion : null,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF0D47A1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 12),
-                  ),
-                  child: Text(
-                    _isLastQuestion ? 'Finish' : 'Next',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ],
+        ],
+      ),
+    );
+  }
+
+  Widget _buildNextButton(bool isDarkMode) {
+    final Color buttonColor = isDarkMode ? const Color(0xFF4A6FFF) : const Color(0xFF0D47A1);
+    
+    return GestureDetector(
+      onTap: _goToNextQuestion,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: buttonColor,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              color: buttonColor,
+              width: 2,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                blurRadius: 2,
+                offset: const Offset(0, 1),
+              ),
+            ],
+          ),
+          child: Center(
+            child: Text(
+              _isLastQuestion ? 'Finish' : 'Next Question',
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+                fontFamily: 'Poppins',
+              ),
             ),
           ),
-        ],
+        ),
       ),
     );
   }
