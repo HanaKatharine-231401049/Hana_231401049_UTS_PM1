@@ -160,7 +160,7 @@ class ResultPage extends StatelessWidget {
                     border: Border.all(color: const Color(0xFFFFD700)),
                   ),
                   child: Text(
-                    '${(percentage * 2).toInt()} Points',
+                    '${(percentage).toInt()} Points',
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
