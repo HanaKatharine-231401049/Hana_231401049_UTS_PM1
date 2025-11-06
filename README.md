@@ -1,8 +1,8 @@
 # 👤 Identitas
 
-Nama : Hana Katharine Putri Pratama Sunmacher
-NIM : 231401049 
-Lab : 1
+- Nama : Hana Katharine Putri Pratama Sunmacher
+- NIM : 231401049 
+- Lab : 1
 
 # 🧠 Nama Aplikasi
 IZZLY
@@ -13,17 +13,17 @@ IZZLY adalah aplikasi kuis mobile yang dirancang untuk memberikan pengalaman bel
 
 # ✨ Fitur Utama
 
-## 👤 Input Nama Pengguna
+1. 👤 **Input Nama Pengguna**
 Sebelum memulai kuis, pengguna diminta memasukkan nama untuk personalisasi pengalaman.
-## 🎯 Kuis Interaktif
+2. 🎯 **Kuis Interaktif**
 Pertanyaan dengan multiple choice, dilengkapi progress indicator dan feedback langsung.
-## 📊 Tampilan Hasil Detail
+3. 📊 **Tampilan Hasil Detail**
 Menampilkan skor, persentase, dan pesan motivasi terhadap performa pengguna.
-## 🔄 Ulangi Kuis
+4. 🔄 **Ulangi Kuis**
 Fitur try again untuk mengulangi kuis dengan pertanyaan yang sama tanpa harus ke halaman awal.
-## 🎨 Dark/Light Mode
+5. 🎨 **Dark/Light Mode**
 Dukungan tema gelap dan terang yang dapat disesuaikan melalui toggle.
-## 📱 UI Responsif
+6. 📱 **UI Responsif**
 Desain yang optimal di berbagai ukuran layar dengan navigasi yang smooth.
 
 # 🎨 Kredit Aset
